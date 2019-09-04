@@ -1,0 +1,57 @@
+import Alquimistas.*
+
+describe "AlquimistasProfes test" {
+	
+//	test "true es true" {
+//		assert.that(true) // assert == verificar
+//		}		
+//				  // si pones true te fijas que todo el test de true, osea esperas que sea true
+//				  
+//	test "1 es igual a 1" {
+//		var numero = 1
+//		assert.equals(1,numero)  //es aseegurarse que es numero sea 1
+//		}	
+	
+	
+//	fixture {
+//		alquimista.agregarItemDeCombate(bomba) // haciendo esto permito que todos los test tengan la bomba agregada como item
+//	}
+	
+	test "un alquimista tiene criterio si no tiene item de combate"{
+		assert.that(alquimista.tieneCriterio())
+	}
+	
+	
+	test "un alquimista tiene criterio teniendo items de combate"{
+		alquimista.agregarItemDeCombate(bomba)
+		assert.that(alquimista.tieneCriterio())
+		
+	}
+	
+	test "un alquimista no tiene criterio teniendo items de combate"{
+		alquimista.agregarItemDeCombate(pocion)
+		assert.notThat(alquimista.tieneCriterio()) // se cumple si NO tiene criterio, por eso el not.
+		
+	}	
+	
+	test "un alquimista es buen explorador"{
+		alquimista.agregarItemDeRecoleccion("rojo")
+		alquimista.agregarItemDeRecoleccion("uni")
+		alquimista.agregarItemDeRecoleccion("flor")
+		assert.that(alquimista.esBuenExplorador())
+	}
+	
+	test "un alquimista no es buen explorador"{
+		assert.notThat(alquimista.esBuenExplorador())
+	}
+	
+	/*test "la capacidad ofensiva de un alquimista es .."{
+		alquimista.agregarItemDeCombate(bomba)
+		alquimista.agregarItemDeCombate(pocion)
+		assert.equals(678,alquimista.capacidadOfensiva())
+	}*/
+	
+	
+	
+				  			  
+}						  
